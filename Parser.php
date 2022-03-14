@@ -118,7 +118,7 @@ class Parser
      * @var string
      * @access protected
      */
-    protected $dateformat = '%Y-%m-%d %H:%M:%S';
+    protected $dateformat = 'Y-m-d H:i:s';
 
     /**
      * Activate cache
@@ -483,7 +483,7 @@ class Parser
      * @param  string $dateformat
      * @return void
      */
-    public function setDateFormat($dateformat = '%Y-%m-%d %H:%M:%S')
+    public function setDateFormat($dateformat = 'Y-m-d H:i:s')
     {
         $this->dateformat = $dateformat;
     }
