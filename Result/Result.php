@@ -533,7 +533,7 @@ class Result extends AbstractResult
     /**
      * Format given dates by date format
      *
-     * @param  string $dateformat
+     * @param  string $dateformat
      * @param  string $date
      * @return string
      */
@@ -548,6 +548,12 @@ class Result extends AbstractResult
             $timestamp = strtotime(str_replace('/', '.', $date));
         }
 
-        return (strlen($timestamp) ? strftime($dateformat, $timestamp) : $date);
+        if ($timestamp !== false) {
+            $dt = new \DateTime();
+            $dt->setTimestamp($timestamp);
+            return $dt->format($dateformat);
+        }
+
+        return $date;
     }
 }
