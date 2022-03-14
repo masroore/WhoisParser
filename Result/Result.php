@@ -174,7 +174,7 @@ class Result extends AbstractResult
     /**
      * Name of the actual template
      *
-     * @var string
+     * @var string[]
      * @access protected
      */
     public $template;
