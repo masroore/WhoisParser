@@ -69,7 +69,7 @@ class Venez extends Regex {
     }
 
 
-    public function translateRawData($rawdata)
+    public function translateRawData($rawdata, $config)
     {
         return utf8_encode($rawdata);
     }
