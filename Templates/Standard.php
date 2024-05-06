@@ -107,9 +107,9 @@ class Standard extends KeyValue
         if (isset($ResultSet->ask_whois)) {
             $Config = $WhoisParser->getConfig();
             $curConfig = $Config->getCurrent();
-            if (strtolower(trim($curConfig['server'])) != strtolower(trim($ResultSet->ask_whois))) {
-                $newConfig = $Config->get(trim($ResultSet->ask_whois));
-                $newConfig['server'] = trim($ResultSet->ask_whois);
+            if (strtolower(trim((string)$curConfig['server'])) != strtolower(trim((string)$ResultSet->ask_whois))) {
+                $newConfig = $Config->get(trim((string)$ResultSet->ask_whois));
+                $newConfig['server'] = trim((string)$ResultSet->ask_whois);
                 unset($ResultSet->ask_whois);
 
                 $Config->setCurrent($newConfig);
